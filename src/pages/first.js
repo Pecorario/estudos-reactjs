@@ -37,12 +37,17 @@ class FirstPractice extends Component {
   render() {
     return (
       <div className="First">
-        <MyLabel text={this.state.labelText} />
-
-        <MyButton handleClick={this.setLabelText} label="Botão 1" />
-        <MyButton handleClick={this.setLabelText} label="Botão 2" />
-        <MyButton handleClick={this.setLabelText} label="Botão 3" />
-        <MyButton handleClick={this.setLabelText} label="Botão 4" />
+        <div className="texto">
+          <MyLabel text={this.state.labelText} />
+        </div>
+        
+        <div className="btns">
+          <MyButton handleClick={this.setLabelText} label="Botão 1" />
+          <MyButton handleClick={this.setLabelText} label="Botão 2" />
+          <MyButton handleClick={this.setLabelText} label="Botão 3" />
+          <MyButton handleClick={this.setLabelText} label="Botão 4" />
+        </div>
+        
       </div>
     );
   }

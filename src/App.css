@@ -6,12 +6,19 @@
 html, body {
   width: 100%;
   height: 100%;
+  
+}
+
+body {
   background-color: darkslateblue;
-  display: flex;
 }
 
 .First {
-  height: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
 }
 
 .First * {
@@ -21,4 +28,16 @@ html, body {
 .First p {
   text-align: center;
   font-weight: bold;
+  font-size: 30px;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+}
+
+.First button {
+  width: 8%;
+  font-size: 18px;
+  margin: 5px;
 }
