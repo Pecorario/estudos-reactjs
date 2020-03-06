@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NextPage from '../components/btn-page';
 
 //Estudos acerca de props, state e components do vídeo https://www.youtube.com/watch?v=WPYI2CcRX7c&t=311s
 
@@ -36,7 +37,7 @@ class FirstPractice extends Component {
 
   render() {
     return (
-      <div className="First">
+      <div className="Page">
         <div className="texto">
           <MyLabel text={this.state.labelText} />
         </div>
@@ -48,6 +49,7 @@ class FirstPractice extends Component {
           <MyButton handleClick={this.setLabelText} label="Botão 4" />
         </div>
         
+        <NextPage onClick={() => this.props.changeSelected("contador")} />
       </div>
     );
   }

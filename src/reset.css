@@ -106,25 +106,6 @@ select
 	box-sizing:border-box;
 }
 
-/* Text Inputs
------------------------------------------------*/
-
-input[type=date],
-input[type=datetime],
-input[type=datetime-local],
-input[type=email],
-input[type=month],
-input[type=number],
-input[type=password],
-input[type=range],
-input[type=search],
-input[type=tel],
-input[type=text],
-input[type=time],
-input[type=url],
-input[type=week]
-{
-}
 
 /* Button Controls
 -----------------------------------------------*/
@@ -134,14 +115,6 @@ input[type=radio]
 {
 	width:13px;
 	height:13px;
-}
-
-/* File Uploads
------------------------------------------------*/
-
-input[type=file]
-{
-
 }
 
 /* Search Input
