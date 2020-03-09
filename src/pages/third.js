@@ -1,15 +1,5 @@
 import React, { Component } from 'react';
-import NextPage from '../components/btn-page';
 import Cropper from "cropperjs";
-
-//Aprendendo a usar o Cropper https://github.com/fengyuanchen/cropperjs, modal e
-//canvas
-
-// function Example() {
-
-  
-//   return();
-// }
 
 class ThirdPractice extends Component {
 
@@ -32,7 +22,6 @@ class ThirdPractice extends Component {
   }
 
   render() {
-
     return (
       <div className="Cropper">
         <div className="input-foto">

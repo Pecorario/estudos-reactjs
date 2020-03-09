@@ -49,7 +49,7 @@ class FirstPractice extends Component {
           <MyButton handleClick={this.setLabelText} label="Botão 4" />
         </div>
         
-        <NextPage onClick={() => this.props.changeSelected("contador")} />
+        <NextPage />
       </div>
     );
   }

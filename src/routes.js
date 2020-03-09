@@ -10,8 +10,8 @@ const Routes = () => (
         <Switch>
             <Route exact path="/" component={Principal} />
             <Route path="/first" component={FirstPractice} />
-            <Route path="/contador" component={SecondPractice} />
-            <Route path="/cropper" component={ThirdPractice} />
+            <Route path="/second" component={SecondPractice} />
+            <Route path="/third" component={ThirdPractice} />
         </Switch>
     </BrowserRouter>
 );
