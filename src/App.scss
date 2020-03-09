@@ -60,3 +60,23 @@ body {
 .btn-nextPage:hover {
   cursor: pointer;
 }
+
+// Cropper
+.Cropper {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.input-foto {
+  display: flex;
+  
+  input{
+    align-self: center;
+  }
+}
+
+#output {
+  
+}
