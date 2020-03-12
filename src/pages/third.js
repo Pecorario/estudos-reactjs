@@ -29,23 +29,33 @@ class ThirdPractice extends Component {
       output.src = dataURL;
     };
     reader.readAsDataURL(file[0]);
+    
+    const foto = document.getElementById('foto');
+    var cropper = new Cropper (foto, {
+        aspectRatio: 1,
+        viewMode: 3,
+      });
+    }
+  
+  cropImage = event => {
+    var canvas;
+    var cropper;
+    var initialAvatarURL;
+    const cropped = document.getElementById('cropped');
+
+    if(cropper) {
+      canvas = cropper.getCroppedCanvas({
+        width: 160,
+        height: 160,
+      });
+      initialAvatarURL = cropped.src;
+      cropped.src = canvas.toDataURL();
+    }
   }
 
   render() {
     return (
       <div className="Page">
-        <div className="input-foto">
-          <input
-            type="file"
-            onChange={obj => this.onChangeInput(obj)}
-            name="foto"
-          />
-        </div>
-
-        <div className="img-profile">
-          <img id="foto" />
-        </div>
-
         <div className="btns">
           <button onClick={this.openModal}>Open Modal</button>
         </div>
@@ -53,17 +63,31 @@ class ThirdPractice extends Component {
         <Modal
           isOpen={this.state.showModal}
           onRequestClose={this.closeModal}
-          contentLabel="O que é isto?"
           className="Modal"
           overlayClassName="Overlay"
         >
-          <h2>Testando</h2>
-          <p>oi</p>
-          <div>
-            <h1>Oi2</h1>
+          <div className="input-foto">
+            <input
+              type="file"
+              onChange={obj => this.onChangeInput(obj)}
+              name="foto"
+              id="input"
+            />
           </div>
-          <button onClick={this.closeModal}>Close Modal</button>
+
+          <div className="img-profile">
+            <img id="foto"/>
+          </div>
+
+          <div className="btns">
+          <button className="btn-padrao" id="crop">Cortar</button>
+            <button className="btn-padrao" onClick={this.closeModal}>Close Modal</button>
+          </div>
         </Modal>
+
+        <div className="foto-cortada">
+          <img id="cropped" />
+        </div>
         
       </div>
     )

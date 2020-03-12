@@ -56,7 +56,7 @@ a {
   color: black;
 }
 
-.Page button:hover {
+.Page button:hover, .btn-padrao:hover {
   background: black;
   color: white;
 }
@@ -81,14 +81,12 @@ a {
 }
 
 .Modal {
-  position: absolute;
+  display: flex;
   width: fit-content;
-  background-color: white;
+  background-color: darkslateblue;
   padding: 20px;
-  top: 50%;
-  left: 50%;
-  margin-top: -50px;
-  margin-left: -50px;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .Overlay {
@@ -97,5 +95,18 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5)
+  background-color: rgba(253, 251, 251, 0.76)
+}
+
+.btn-padrao {
+  font-size: 18px;
+  margin: 5px;
+  padding: 4px;
+  background: none;
+  border: black 2px solid;
+  color: black;
+}
+
+#foto {
+  width: 200px;
 }
