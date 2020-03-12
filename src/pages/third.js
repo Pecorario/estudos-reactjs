@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
+import Modal from "react-modal";
 import Cropper from "cropperjs";
 
-class ThirdPractice extends Component {
+//rc -> só usa
 
+class ThirdPractice extends Component {
   state = {
-    image: {}
-  };
+    showModal: false,
+  }
+
+  openModal = () => {
+    this.setState({ showModal: true });
+  }
+
+  closeModal = () => {
+    this.setState({ showModal: false });
+  }
 
   onChangeInput = event => {
     const file = event.target.files;
@@ -23,7 +33,7 @@ class ThirdPractice extends Component {
 
   render() {
     return (
-      <div className="Cropper">
+      <div className="Page">
         <div className="input-foto">
           <input
             type="file"
@@ -35,6 +45,26 @@ class ThirdPractice extends Component {
         <div className="img-profile">
           <img id="foto" />
         </div>
+
+        <div className="btns">
+          <button onClick={this.openModal}>Open Modal</button>
+        </div>
+
+        <Modal
+          isOpen={this.state.showModal}
+          onRequestClose={this.closeModal}
+          contentLabel="O que é isto?"
+          className="Modal"
+          overlayClassName="Overlay"
+        >
+          <h2>Testando</h2>
+          <p>oi</p>
+          <div>
+            <h1>Oi2</h1>
+          </div>
+          <button onClick={this.closeModal}>Close Modal</button>
+        </Modal>
+        
       </div>
     )
   }

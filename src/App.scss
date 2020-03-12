@@ -28,6 +28,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  text-align: center;
 }
 
 .Page * {
@@ -70,22 +71,31 @@ a {
   cursor: pointer;
 }
 
-// Cropper
-.Cropper {
+.input-foto, .img-profile {
   display: flex;
   justify-content: center;
-  align-content: center;
-  flex-direction: column;
-}
-
-.input-foto {
-  display: flex;
   
   input{
     align-self: center;
   }
 }
 
-#output {
-  
+.Modal {
+  position: absolute;
+  width: fit-content;
+  background-color: white;
+  padding: 20px;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5)
 }
