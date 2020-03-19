@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import Modal from "react-modal";
-import Cropper from "cropperjs";
+import Cropper from "react-cropper";
+import '../../node_modules/cropperjs/dist/cropper';
 
 //rc -> só usa
+
+const cropper = React.createRef(null);
 
 class ThirdPractice extends Component {
   state = {
     showModal: false,
+    profile: null,
   }
 
   openModal = () => {
@@ -21,37 +25,24 @@ class ThirdPractice extends Component {
     const file = event.target.files;
     console.log("FILE", file);
 
+    let imagem = null;
     var reader = new FileReader();
-
+    
     reader.onload = function () {
       var dataURL = reader.result;
       var output = document.getElementById('foto');
       output.src = dataURL;
+      imagem = output.src;
     };
-    reader.readAsDataURL(file[0]);
     
-    const foto = document.getElementById('foto');
-    var cropper = new Cropper (foto, {
-        aspectRatio: 1,
-        viewMode: 3,
-      });
+    this.setState({ profile: imagem });
+    reader.readAsDataURL(file[0]);
     }
-  
-  cropImage = event => {
-    var canvas;
-    var cropper;
-    var initialAvatarURL;
-    const cropped = document.getElementById('cropped');
 
-    if(cropper) {
-      canvas = cropper.getCroppedCanvas({
-        width: 160,
-        height: 160,
-      });
-      initialAvatarURL = cropped.src;
-      cropped.src = canvas.toDataURL();
+    _crop(){
+      const dataUrl = this.refs.cropper.getCroppedCanvas().toDataURL();
+      console.log("CROPPER",dataUrl);
     }
-  }
 
   render() {
     return (
@@ -78,6 +69,10 @@ class ThirdPractice extends Component {
           <div className="img-profile">
             <img id="foto"/>
           </div>
+
+        {this.state.profile !== undefined && this.state.profile !== null ?
+          <Cropper ref={cropper} src={this.state.profile} style={{height: 400, width: '100%'}} aspectRatio={16 / 9} guides={false} crop={this._crop.bind(this)} />:null  
+        }       
 
           <div className="btns">
           <button className="btn-padrao" id="crop">Cortar</button>
